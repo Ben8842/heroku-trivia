@@ -2,10 +2,12 @@
 
 //const { response } = require("express");
 const express = require("express");
+const buildPath = path.join(__dirname, "..", "build");
+app.use(express.static(buildPath));
+
 const { getMaxListeners } = require("./models/user");
 const user = require("./models/user");
-const uri = process.env.MONGODB_URI;
-const cors = require("cors");
+//const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:3000",
   optionsSuccessStatus: 200,
@@ -14,24 +16,8 @@ const corsOptions = {
 const app = express();
 app.use(express.json());
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
-/*app.get("/users", (req, res) => {
-  console.log("finding");
-  user.find(
-    {
-      password: "coat",
-    },
-    (error, data) => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log(data);
-        res.json(data);
-      }
-    }
-  );
-});*/
 app.post("/users", (req, res) => {
   console.log("posting");
   console.log(req.body.email);
