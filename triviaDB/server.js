@@ -13,8 +13,6 @@ const corsOptions = {
 };
 
 const app = express();
-const buildPath = path.join(__dirname, "..", "build");
-app.use(express.static(buildPath));
 app.use(express.json());
 
 //app.use(cors(corsOptions));
@@ -146,6 +144,12 @@ app.get("/scores", (req, res) => {
       }
     }
   );
+});
+
+const buildPath = path.join(__dirname, "..", "build");
+app.use(express.static(buildPath));
+app.get("/", (req, res) => {
+	 res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
 const port = process.env.PORT || 5000;

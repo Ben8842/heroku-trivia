@@ -1,5 +1,4 @@
 {
-  "homepage": "https://goxr3plus.github.io/React-Router-V5-Tutorial/",
   "name": "router-tutorials",
   "version": "0.1.0",
   "private": true,
@@ -16,11 +15,12 @@
     "reactstrap": "^8.6.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "terser": "^5.5.1"
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "install": "cd triviaDB && npm install",
+    "install": "cd triviaDB; npm install",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
