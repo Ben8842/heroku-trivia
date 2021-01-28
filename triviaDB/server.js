@@ -3,8 +3,6 @@
 //const { response } = require("express");
 const express = require("express");
 const path = require("path");
-const buildPath = path.join(__dirname, "..", "build");
-app.use(express.static(buildPath));
 
 const { getMaxListeners } = require("./models/user");
 const user = require("./models/user");
@@ -15,6 +13,8 @@ const corsOptions = {
 };
 
 const app = express();
+const buildPath = path.join(__dirname, "..", "build");
+app.use(express.static(buildPath));
 app.use(express.json());
 
 //app.use(cors(corsOptions));
