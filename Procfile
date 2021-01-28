@@ -1,4 +1,0 @@
-web: npm start
-
-
-

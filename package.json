@@ -20,12 +20,11 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd triviaDB && yarn install)",
+    "install": "cd triviaDB && npm install",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "cd triviaDB && yarn start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "cd triviaDB && npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
