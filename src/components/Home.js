@@ -180,6 +180,8 @@ class trivia extends Component {
         arry.sort(() => Math.random() - 0.5);
       }
 
+      //comments here
+
       let answerArr = [firstAnswer, secondAnswer, thirdAnswer, fourthAnswer];
       shuffle(answerArr);
       const tAnswers = (
