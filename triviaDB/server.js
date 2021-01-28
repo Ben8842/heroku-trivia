@@ -2,6 +2,7 @@
 
 //const { response } = require("express");
 const express = require("express");
+const path = require("path");
 const buildPath = path.join(__dirname, "..", "build");
 app.use(express.static(buildPath));
 
