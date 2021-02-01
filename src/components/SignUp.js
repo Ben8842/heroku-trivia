@@ -24,7 +24,7 @@ class signUp extends Component {
     console.log("helloSubmit");
     const { email, username, password } = this.state;
     console.log(JSON.stringify({ email, username, password }));
-    fetch("http://localhost:5000/users", {
+    fetch("http://localhost:80/users", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

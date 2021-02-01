@@ -32,7 +32,7 @@ app.post("/users", (req, res) => {
         return res.status(500).send("Server Error during finding");
       } else if (data == null) {
         console.log("null!" + data);
-        userObject.save(function(error) {
+        userObject.save(function (error) {
           console.log("done.");
           console.log(error);
           if (error) {
@@ -149,10 +149,10 @@ app.get("/scores", (req, res) => {
 const buildPath = path.join(__dirname, "..", "build");
 app.use(express.static(buildPath));
 app.get("/", (req, res) => {
-	 res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 app.listen(port, () => {
   console.log("Hello Server Running on " + port);
 });
