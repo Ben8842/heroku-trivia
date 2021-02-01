@@ -24,7 +24,7 @@ class logIn extends Component {
 
   submitLogIn() {
     const { email, password, username } = this.state;
-    fetch("http://localhost:80/authenticate", {
+    fetch("/authenticate", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
