@@ -76,7 +76,7 @@ class trivia extends Component {
       catsIsLoaded: false,
       cats: [],
       isLoggedIn: false,
-      superUser: "",
+      superUser: null,
       data: [],
       categoryName: "",
     };
@@ -234,58 +234,68 @@ class trivia extends Component {
     var { superUser, correctCount, categoryName } = this.state;
 
     console.log("HOME");
-    console.log("adding SCORE");
-
-    console.log(JSON.stringify({ superUser, correctCount, categoryName }));
-    fetch("/scores", {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify({ superUser, correctCount, categoryName }),
-      // body data type must match "Content-Type" header
-    })
-      .then((res) => {
-        console.log("trigger");
-        if (res.status === 400) {
-          this.setState({
-            count: 1,
-            show: false,
-            startButton: true,
-            triviaDone: false,
-            correctCount: 0,
-          });
-          return res.text();
-        }
-        //if (res.status === 201) {
-        else {
-          this.setState({
-            count: 1,
-            show: false,
-            startButton: true,
-            triviaDone: false,
-            correctCount: 0,
-          });
-          return;
-        }
+    console.log(superUser);
+    if (superUser !== null) {
+      console.log(JSON.stringify({ superUser, correctCount, categoryName }));
+      fetch("/scores", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({ superUser, correctCount, categoryName }),
+        // body data type must match "Content-Type" header
       })
+        .then((res) => {
+          console.log("trigger");
+          if (res.status === 400) {
+            this.setState({
+              count: 1,
+              show: false,
+              startButton: true,
+              triviaDone: false,
+              correctCount: 0,
+            });
+            return res.text();
+          }
+          //if (res.status === 201) {
+          else {
+            this.setState({
+              count: 1,
+              show: false,
+              startButton: true,
+              triviaDone: false,
+              correctCount: 0,
+            });
+            return;
+          }
+        })
 
-      .then((data) => {
-        if (typeof data === "string") {
-          console.log("time to push the data");
-          // this.props.createModalError(data);
-        }
-        //if (typeof data === "object") {
-        else {
-          console.log("no user found");
-          //  this.closeModal();
-        }
+        .then((data) => {
+          if (typeof data === "string") {
+            console.log("time to push the data");
+            // this.props.createModalError(data);
+          }
+          //if (typeof data === "object") {
+          else {
+            console.log("no user found");
+            //  this.closeModal();
+          }
+        });
+    } else {
+      this.setState({
+        count: 1,
+        show: false,
+        startButton: true,
+        triviaDone: false,
+        correctCount: 0,
       });
+      return;
+    }
   }
 
   logOut() {
