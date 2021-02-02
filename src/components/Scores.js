@@ -36,6 +36,7 @@ class Scores extends Component {
   render() {
     var { isLoggedIn, data, superUser, superScores, cats } = this.state;
     console.log("component mounted and " + isLoggedIn + data + superUser);
+    console.log("current scores are" + superScores);
 
     const pleaseLogIn = (
       <div id="trivia">

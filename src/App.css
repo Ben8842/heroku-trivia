@@ -39,19 +39,6 @@
   font-weight: bold;
 }
 
-#triviaScore {
-  text-align: left;
-  color: darkgreen;
-  align-items: center;
-  padding: 25px;
-  margin: 25px;
-  font-size: 30px;
-  background-color: yellow;
-  border-radius: 50px;
-  font-weight: bold;
-  text-align: center;
-}
-
 #tab {
   text-align: center;
   color: darkgreen;
@@ -205,5 +192,173 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #Header {
+    text-align: right;
+    padding: 4px;
+  }
+
+  #trivia {
+    text-align: center;
+    color: darkgreen;
+    border-style: dashed;
+    border-color: blue;
+    border-width: thick;
+    padding: 8px;
+    margin: 8px;
+    font-size: 20px;
+    background-color: yellow;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  #tab {
+    text-align: center;
+    color: darkgreen;
+    border-style: dashed;
+    border-color: blue;
+    border-width: thick;
+    padding: 8px;
+    margin: 8px;
+    font-size: 12px;
+    background-color: yellow;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  #correct {
+    text-align: center;
+    color: black;
+    border-style: dotted;
+    border-color: darkgreen;
+    border-width: thick;
+    padding: 8px;
+    margin: 8px;
+    font-size: 20px;
+    background-color: lightgreen;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  #wrong {
+    text-align: center;
+    color: white;
+    border-style: double;
+    border-color: darkred;
+    border-width: thick;
+    padding: 8px;
+    margin: 8px;
+    font-size: 20px;
+    background-color: red;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.9s;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button1 {
+    background-color: lightblue;
+    color: black;
+    border: 8px solid #008cba;
+    font: 18px;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button1:hover {
+    background-color: #008cba;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button2 {
+    background-color: red;
+    color: black;
+    border: 8px solid darkred;
+    font: 18px;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button2:hover {
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button3 {
+    background-color: lightgreen;
+    color: black;
+    border: 8px solid darkgreen;
+    font: 18px;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button3:hover {
+    background-color: darkgreen;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button4 {
+    background-color: lightgreen;
+    color: black;
+    border: 5px solid darkgreen;
+    font: 11px;
+    font-size: 11px;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .button4:hover {
+    background-color: darkgreen;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .App {
+    text-align: center;
+  }
+
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
+  }
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .App-link {
+    color: #61dafb;
   }
 }
