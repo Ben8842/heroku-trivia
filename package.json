@@ -16,7 +16,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0",
-    "terser": "^5.5.1"
+    "terser": "^5.5.1",
+    "redux-devtools": "^3.7.0"
   },
   "scripts": {
     "start-client": "react-scripts start",
@@ -37,7 +38,6 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "react-router": "^5.2.0",
-    "redux-devtools": "^3.7.0"
+    "react-router": "^5.2.0"
   }
 }
